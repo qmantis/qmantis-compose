@@ -1,0 +1,23 @@
+receivers:
+  jaeger:
+    protocols:
+      grpc:
+      thrift_http:
+        endpoint: "0.0.0.0:14268"
+
+exporters:
+  otlp:
+    endpoint: "promscale:9202"
+    insecure: true
+
+processors:
+  batch:
+    send_batch_size: 4
+    send_batch_max_size: 8
+
+service:
+  pipelines:
+    traces:
+      receivers: [jaeger]
+      exporters: [otlp]
+      processors: [batch]
