@@ -47,7 +47,7 @@ services:
       - prometheus
 
   grafana:
-    container_name: granfana
+    container_name: grafana
     image: grafana/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-simple-json-datasource
