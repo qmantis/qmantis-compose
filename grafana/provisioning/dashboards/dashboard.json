@@ -26,6 +26,91 @@
   "panels": [
     {
       "datasource": {
+        "type": "jaeger",
+        "uid": "PC9A941E8F2E49454"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Start time",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 100
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "jaeger",
+            "uid": "PC9A941E8F2E49454"
+          },
+          "queryType": "search",
+          "refId": "A",
+          "service": "graphql-service",
+          "tags": "http.target=/graphql"
+        }
+      ],
+      "title": "All Traces",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
         "type": "prometheus",
         "uid": "P14A7462318E796ED"
       },
@@ -82,7 +167,7 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 0,
+        "x": 12,
         "y": 0
       },
       "id": 4,
@@ -121,7 +206,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "fixedColor": "red",
+            "mode": "fixed"
           },
           "custom": {
             "axisLabel": "",
@@ -144,12 +230,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
-              },
-              {
                 "color": "red",
-                "value": 80
+                "value": null
               }
             ]
           }
@@ -157,12 +239,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 9
       },
-      "id": 2,
+      "id": 6,
       "options": {
         "barRadius": 0,
         "barWidth": 0.97,
@@ -192,10 +274,10 @@
           "queryType": "search",
           "refId": "A",
           "service": "graphql-service",
-          "tags": "http.target=/graphql"
+          "tags": "otel.status_code=ERROR"
         }
       ],
-      "title": "Traces",
+      "title": "Error Traces",
       "type": "barchart"
     }
   ],
@@ -207,7 +289,7 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
