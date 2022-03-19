@@ -16,7 +16,7 @@ datasources:
     version: 1
     editable: true
   
-  - name: Promscale
+  - name: Prometheus
     type: prometheus
     access: proxy
     orgId: 1
@@ -24,14 +24,6 @@ datasources:
     basicAuth: false
     version: 1
     editable: true
-  
-  - name: Prometheus
-    type: prometheus
-    access: proxy
-    orgId: 1
-    url: http://prometheus:9090
-    basicAuth: false
-    version: 1
-    editable: true
+
 
 
