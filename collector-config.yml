@@ -5,19 +5,35 @@ receivers:
       thrift_http:
         endpoint: "0.0.0.0:14268"
 
+processors:
+  batch:
+    send_batch_size: 4
+    send_batch_max_size: 8
+  span/custom1:
+    name:
+      separator: ""
+      from_attributes: [graphql.operation.type]
+  span/custom2:
+    name:
+      separator: ": "
+      from_attributes: [graphql.operation.type, graphql.operation.name]
+  span/custom3:
+    name:
+      separator: ""
+      from_attributes: [graphql.field.path]
+  span/custom4:
+    name:
+      separator: ""
+      from_attributes: [operationName]
+      
 exporters:
   otlp:
     endpoint: "promscale:9202"
     insecure: true
 
-processors:
-  batch:
-    send_batch_size: 4
-    send_batch_max_size: 8
-
 service:
   pipelines:
     traces:
       receivers: [jaeger]
+      processors: [span/custom1, span/custom2, span/custom3, span/custom4, batch]
       exporters: [otlp]
-      processors: [batch]
