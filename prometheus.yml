@@ -4,7 +4,6 @@ scrape_configs:
   - job_name: "graphql-metrics"
     static_configs:
       - targets: ["docker.for.mac.host.internal:9464"]
-      # - targets: ["localhost:4000"]
 remote_write:
   - url: "http://promscale:9201/write"
     remote_timeout: 30s
