@@ -32,7 +32,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "fixedColor": "#88d7c6",
+            "mode": "fixed"
           },
           "custom": {
             "axisLabel": "",
@@ -105,6 +106,7 @@
           },
           "exemplar": true,
           "expr": "histogram_quantile(0.95, sum(rate(request_latency_bucket{}[5m])) by (le))",
+          "hide": false,
           "interval": "",
           "legendFormat": "Latency p95",
           "refId": "A"
@@ -116,7 +118,7 @@
           },
           "exemplar": true,
           "expr": "histogram_quantile(0.99, sum(rate(request_latency_bucket{}[5m])) by (le))",
-          "hide": false,
+          "hide": true,
           "interval": "",
           "legendFormat": "Latency p99",
           "refId": "B"
@@ -133,7 +135,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "fixedColor": "#ee6f57",
+            "mode": "fixed"
           },
           "custom": {
             "axisLabel": "",
@@ -211,7 +214,7 @@
           "refId": "A"
         }
       ],
-      "title": "Error rate",
+      "title": "Error Rate",
       "type": "timeseries"
     },
     {
@@ -222,7 +225,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "fixedColor": "#88d7c6",
+            "mode": "fixed"
           },
           "custom": {
             "axisLabel": "",
@@ -312,7 +316,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "red",
+            "fixedColor": "#ee6f57",
             "mode": "fixed"
           },
           "custom": {
@@ -442,7 +446,7 @@
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "#73BF69",
+                  "fixedColor": "#88d7c6",
                   "mode": "fixed"
                 }
               }
@@ -494,7 +498,7 @@
       "type": "barchart"
     }
   ],
-  "refresh": "",
+  "refresh": "5s",
   "schemaVersion": 35,
   "style": "dark",
   "tags": [],
