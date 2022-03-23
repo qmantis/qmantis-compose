@@ -2,13 +2,14 @@
 
 ## How to set up QMantis
 
-* In the server that'll host QMantis, where you imported either `qmantis-server-js` or `qmantis-server-express`, you'll need to:
+### QMantis infrastructure
+* In the root folder of your GraphQL API, where you imported `qmantis-server-express`, you'll need to:
   1. Run the Docker daemon
   2. Clone this `qmantis-compose` directory
   3. `cd` into `qmantis-compose` and execute `docker-compose up`
 
-* To visualize your metrics and traces, visit Grafana at port 3000.
-* When you first visit Grafana, you will be prompted to enter a username and password. Type in `admin` for the username and `admin` for the password. You will then be asked to change the password.
+* To visualize your metrics and traces, access Grafana at port 3000.
+* When you first access Grafana, you will be prompted to enter a username and password. Type in `admin` for the username and `admin` for the password. You will then be asked to change the password.
 * After logging in, on the left side of the screen, click on Dashboards > Browse, then click on the 'qmantis' dashboard.
 * In this dashboard, you will see the panels:
   * Request Rate
