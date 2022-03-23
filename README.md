@@ -6,8 +6,8 @@
 * In the root folder of your GraphQL API, where you imported `qmantis-server-express`, you'll need to:
   1. Run the Docker daemon
   2. Clone this `qmantis-compose` directory
-  3. `cd` into `qmantis-compose` 
-  4. Create a .env file that includes POSTGRES_USER and POSTGRES_PASSWORD
+  3. `cd` into `qmantis-compose`
+  4. Create an `.env` file with these environmental variables: `POSTGRES_USER` and `POSTGRES_PASSWORD`
   5. Execute `docker-compose up`
 
 * To visualize your metrics and traces, access Grafana at port 3000.
