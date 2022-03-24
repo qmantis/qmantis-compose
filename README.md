@@ -1,6 +1,4 @@
-![QMantis color logo](https://i.ibb.co/wBdQzfb/QMantis-logo-color.png)
-
-
+![QMantis color logo](https://i.ibb.co/YjZnTdj/QMantis-logo-color-small2.png)
 # QMantis: Observability and monitoring for GraphQL APIs
 
 ## How to set up QMantis
