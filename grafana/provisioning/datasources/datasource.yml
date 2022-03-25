@@ -24,6 +24,3 @@ datasources:
     basicAuth: false
     version: 1
     editable: true
-
-
-
