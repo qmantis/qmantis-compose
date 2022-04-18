@@ -6,7 +6,9 @@
 
 ### QMantis infrastructure
 
-* In the root folder of your GraphQL API, where you imported `qmantis-express`, you'll need to:
+* This repo will run properly as long as it is on the same machine as the GraphQL API where qmantis-express is installed.
+
+* In whatever local directory works best for you, you'll need to:
   1. Run the Docker daemon
   2. Clone this `qmantis-compose` directory
   3. `cd` into `qmantis-compose`
